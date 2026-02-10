@@ -10,6 +10,14 @@ class BookInStock
   def to_s
     "ISBN: #{@isbn}, price: #{@price}"
   end
+
+  def price_in_cents
+    (price * 100).round
+  end
+
+  def price_in_cents=(cents)
+    @price = cents / 100
+  end
 end
 b1 = BookInStock.new('isbn1', 3)
 puts b1
@@ -23,3 +31,7 @@ puts "ISBN - #{book.isbn}"
 puts "price - #{book.price}"
 book.price = book.price * 0.75
 puts "new price = #{book.price}"
+puts "price in cents = #{book.price_in_cents}"
+book.price_in_cents = 1234
+puts "price - #{book.price}"
+puts "price in cents = #{book.price_in_cents}"
