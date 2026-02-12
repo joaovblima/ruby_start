@@ -32,9 +32,3 @@ class Produto
     puts 'percentual invalido'
   end
 end
-
-produto1 = Produto.new('sabonete', 3.33, 10)
-puts produto1
-puts produto1.preco_em_centavos
-produto1.aplicar_desconto(30)
-puts produto1
